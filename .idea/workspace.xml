@@ -4,18 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6e8e265a-e10c-4118-aaf0-bf1ca31652ec" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/app/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/app/Video.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/client/MainFrame.form" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/client/MainFrame.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/utils/DoublyLinkedList.java" afterDir="false" />
+    <list default="true" id="6e8e265a-e10c-4118-aaf0-bf1ca31652ec" name="Changes" comment="Initial Commit">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,11 +70,23 @@
       <workItem from="1672066758557" duration="2452000" />
       <workItem from="1672069691055" duration="560000" />
       <workItem from="1672070294833" duration="226000" />
-      <workItem from="1672070559878" duration="2915000" />
+      <workItem from="1672070559878" duration="3191000" />
     </task>
+    <task id="LOCAL-00001" summary="Initial Commit">
+      <created>1672073741889</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1672073741889</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Initial Commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="Initial Commit" />
   </component>
 </project>
