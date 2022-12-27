@@ -5,6 +5,7 @@ import uk.co.caprica.vlcj.player.component.EmbeddedMediaPlayerComponent;
 import utils.Stack;
 
 import javax.swing.*;
+import javax.swing.border.EmptyBorder;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import java.awt.*;
 
@@ -51,6 +52,7 @@ public class MainFrame extends JFrame {
             label.setIcon(new ImageIcon(image.getScaledInstance(image.getWidth(null) / 3, image.getHeight(null) / 3, Image.SCALE_SMOOTH)));
             label.setHorizontalTextPosition(JLabel.RIGHT);
             label.setFont(font);
+            label.setBorder(new EmptyBorder(20, 20, 20, 20));
             return label;
         }
     }
@@ -64,6 +66,8 @@ public class MainFrame extends JFrame {
         setContentPane(panel1);
         videosListModel = new DefaultListModel<>();
         videosList.setCellRenderer(new VideosListRenderer());
+        videosList.setBorder(new EmptyBorder(20, 20, 20, 20));
+
         videosList.setModel(videosListModel);
         listVideos();
         mediaPlayerComponent = new EmbeddedMediaPlayerComponent();
