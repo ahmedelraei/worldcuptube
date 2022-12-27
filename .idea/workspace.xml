@@ -4,13 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6e8e265a-e10c-4118-aaf0-bf1ca31652ec" name="Changes" comment="Video Class &amp; GUI">
-      <change afterPath="$PROJECT_DIR$/src/main/java/utils/Stack.java" afterDir="false" />
+    <list default="true" id="6e8e265a-e10c-4118-aaf0-bf1ca31652ec" name="Changes" comment="Added Searching, Watching Highlights and Video Controls">
+      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/Video.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/Video.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/client/MainFrame.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/client/MainFrame.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/client/MainFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/client/MainFrame.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,7 +70,7 @@
       <workItem from="1672066758557" duration="2452000" />
       <workItem from="1672069691055" duration="560000" />
       <workItem from="1672070294833" duration="226000" />
-      <workItem from="1672070559878" duration="26017000" />
+      <workItem from="1672070559878" duration="26440000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit">
       <created>1672073741889</created>
@@ -104,7 +100,14 @@
       <option name="project" value="LOCAL" />
       <updated>1672087637042</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Added Searching, Watching Highlights and Video Controls">
+      <created>1672100864091</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1672100864091</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -114,6 +117,7 @@
     <MESSAGE value="Initial Commit" />
     <MESSAGE value="." />
     <MESSAGE value="Video Class &amp; GUI" />
-    <option name="LAST_COMMIT_MESSAGE" value="Video Class &amp; GUI" />
+    <MESSAGE value="Added Searching, Watching Highlights and Video Controls" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added Searching, Watching Highlights and Video Controls" />
   </component>
 </project>
