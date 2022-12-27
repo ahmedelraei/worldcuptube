@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6e8e265a-e10c-4118-aaf0-bf1ca31652ec" name="Changes" comment=".">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="6e8e265a-e10c-4118-aaf0-bf1ca31652ec" name="Changes" comment="Video Class &amp; GUI">
+      <change afterPath="$PROJECT_DIR$/src/main/java/utils/Stack.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/app/Video.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/Video.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/client/MainFrame.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/client/MainFrame.form" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/client/MainFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/client/MainFrame.java" afterDir="false" />
@@ -74,7 +74,7 @@
       <workItem from="1672066758557" duration="2452000" />
       <workItem from="1672069691055" duration="560000" />
       <workItem from="1672070294833" duration="226000" />
-      <workItem from="1672070559878" duration="12912000" />
+      <workItem from="1672070559878" duration="26017000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit">
       <created>1672073741889</created>
@@ -97,7 +97,14 @@
       <option name="project" value="LOCAL" />
       <updated>1672073853918</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Video Class &amp; GUI">
+      <created>1672087637042</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1672087637042</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -106,6 +113,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initial Commit" />
     <MESSAGE value="." />
-    <option name="LAST_COMMIT_MESSAGE" value="." />
+    <MESSAGE value="Video Class &amp; GUI" />
+    <option name="LAST_COMMIT_MESSAGE" value="Video Class &amp; GUI" />
   </component>
 </project>

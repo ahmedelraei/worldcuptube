@@ -52,7 +52,7 @@ public class Video implements Serializable {
         }
     }
 
-    public static void add(File file, File cover, String title, String description, String[] tags) {
+    public static Video add(File file, File cover, String title, String description, String[] tags) {
         Video video = new Video(file, cover, title, description, tags);
         try {
             serializeObject(video);
@@ -60,6 +60,7 @@ public class Video implements Serializable {
             throw new RuntimeException(e);
         }
         videos.add(video);
+        return video;
 
     }
 
@@ -72,13 +73,20 @@ public class Video implements Serializable {
     }
 
     public int searchTag(String targetTag) {
-        // TODO: Trying Binray Search
-        int score = 0;
         for (String tag : tags) {
             if (tag.equals(targetTag))
-                score++;
+                return 1;
         }
-        return score;
+        return 0;
+    }
+
+    public static DoublyLinkedList<Video> search(String query) {
+        DoublyLinkedList<Video> result = new DoublyLinkedList<>();
+        for (Video video : videos) {
+            if (video.searchTag(query) == 1)
+                result.add(video);
+        }
+        return result;
     }
 
 

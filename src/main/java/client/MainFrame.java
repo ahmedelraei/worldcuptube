@@ -1,11 +1,14 @@
 package client;
 
 import app.Video;
+import uk.co.caprica.vlcj.player.component.EmbeddedMediaPlayerComponent;
+import utils.Stack;
 
 import javax.swing.*;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import java.awt.*;
 
+import java.awt.event.*;
 import java.io.File;
 
 public class MainFrame extends JFrame {
@@ -19,11 +22,18 @@ public class MainFrame extends JFrame {
     private JButton uploadButton;
     private JButton videoCoverSelectButton;
     private JTextField videoCoverPathTextField;
-    private JTextField textField1;
+    private JTextField searchTextField;
     private JButton searchButton;
     private JScrollPane videosScrollPane;
-    private JList videosList;
-    private DefaultListModel videosListModel;
+    private JList<Video> videosList;
+    private JPanel videoPlayPanel;
+    private JButton backHistoryButton;
+    private JButton forwardHistoryButton;
+    private JButton playPauseButton;
+    private final DefaultListModel<Video> videosListModel;
+    private final EmbeddedMediaPlayerComponent mediaPlayerComponent;
+    private final Stack<Video> backwardStack;
+    private final Stack<Video> forwardStack;
 
     public class VideosListRenderer extends DefaultListCellRenderer {
 
@@ -52,13 +62,20 @@ public class MainFrame extends JFrame {
         setSize(800, 600);
         setLocationRelativeTo(null);
         setContentPane(panel1);
-        videosListModel = new DefaultListModel();
+        videosListModel = new DefaultListModel<>();
         videosList.setCellRenderer(new VideosListRenderer());
         videosList.setModel(videosListModel);
         listVideos();
+        mediaPlayerComponent = new EmbeddedMediaPlayerComponent();
+        videoPlayPanel.add(mediaPlayerComponent, BorderLayout.CENTER);
         setExtendedState(JFrame.MAXIMIZED_BOTH);
         setMinimumSize(new Dimension(1000, 720));
+        backHistoryButton.setEnabled(false);
+        forwardHistoryButton.setEnabled(false);
+
         pack();
+        backwardStack = new Stack<>();
+        forwardStack = new Stack<>();
         setVisible(true);
 
         selectButton.addActionListener(actionEvent -> {
@@ -101,9 +118,65 @@ public class MainFrame extends JFrame {
             for (int i = 0; i < tagsArray.length; i++) {
                 tagsArray[i] = tagsArray[i].trim();
             }
-            Video.add(new File(path), new File(coverPath), title, desc, tagsArray);
+            Video video = Video.add(new File(path), new File(coverPath), title, desc, tagsArray);
+            videosListModel.addElement(video);
             JOptionPane.showMessageDialog(this, "Video uploaded successfully");
         });
+        searchButton.addActionListener(actionEvent -> {
+            String query = searchTextField.getText();
+            if (query.isEmpty()) {
+                JOptionPane.showMessageDialog(this, "Please enter a search query");
+                return;
+            }
+            videosListModel.clear();
+            for (Video video : Video.search(query)) {
+                videosListModel.addElement(video);
+            }
+        });
+        MouseListener mouseListener = new MouseAdapter() {
+            public void mouseClicked(MouseEvent e) {
+                int index = videosList.locationToIndex(e.getPoint());
+                Video video = videosListModel.get(index);
+                mediaPlayerComponent.mediaPlayer().media().start(video.getFile().getAbsolutePath());
+                tabbedPane1.setSelectedIndex(2);
+                backwardStack.push(video);
+                if (backwardStack.size() > 1)
+                    backHistoryButton.setEnabled(true);
+
+            }
+        };
+        videosList.addMouseListener(mouseListener);
+
+        playPauseButton.addActionListener(actionEvent -> {
+            if (mediaPlayerComponent.mediaPlayer().status().isPlaying()) {
+                mediaPlayerComponent.mediaPlayer().controls().pause();
+            } else {
+                mediaPlayerComponent.mediaPlayer().controls().play();
+            }
+        });
+        backHistoryButton.addActionListener(actionEvent -> {
+            if (backwardStack.size() > 1) {
+                Video poppedVideo = backwardStack.pop();
+                if (backwardStack.size() == 1)
+                    backHistoryButton.setEnabled(false);
+                forwardStack.push(poppedVideo);
+                forwardHistoryButton.setEnabled(true);
+                Video video = backwardStack.peek();
+                mediaPlayerComponent.mediaPlayer().media().start(video.getFile().getAbsolutePath());
+            }
+        });
+        forwardHistoryButton.addActionListener(actionEvent -> {
+            if (forwardStack.size() >= 1) {
+                Video video = forwardStack.pop();
+                if (forwardStack.isEmpty())
+                    forwardHistoryButton.setEnabled(false);
+                backwardStack.push(video);
+                backHistoryButton.setEnabled(true);
+                mediaPlayerComponent.mediaPlayer().media().start(video.getFile().getAbsolutePath());
+            }
+        });
+
+
     }
 
     private void listVideos() {
